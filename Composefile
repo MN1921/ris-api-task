@@ -1,0 +1,22 @@
+services:
+  php:
+    image: "php:8.4.13-fpm.dev"
+    ports:
+      - "53586:53586"
+    command: bash -c "/app/bootstrap.sh"
+    volumes:
+      - "./src:/app"
+    networks:
+      - network
+  postgres:
+    image: "postgres:18.0"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+    networks:
+      - network
+
+networks:
+  network:
+    name: "compose-network"

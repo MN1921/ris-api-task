@@ -1,0 +1,19 @@
+meta {
+  name: api socks income 1
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:53586/proxy/80/api/socks/income
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "skuName": "Носки 2",
+    "cottonPart": 0,
+    "quantity": 1
+  }
+}

@@ -1,0 +1,20 @@
+meta {
+  name: api socks outcome 0
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:53586/proxy/80/api/socks/outcome
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "skuName": "Носки 2",
+    "color": "Черный",
+    "cottonPart": 8,
+    "quantity": 1
+  }
+}
