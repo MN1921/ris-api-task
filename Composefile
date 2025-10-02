@@ -1,11 +1,11 @@
 services:
   php:
     image: "php:8.4.13-fpm.dev"
+    volumes:
+      - .\\src:/app
     ports:
       - "53586:53586"
     command: bash -c "/app/bootstrap.sh"
-    volumes:
-      - "./src:/app"
     networks:
       - network
   postgres:

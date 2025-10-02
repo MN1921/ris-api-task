@@ -2,7 +2,7 @@ FROM docker.io/php:8.4.13-fpm
 
 RUN apt update \
 && apt install -y nginx \
-&& curl -fsSL https://code-server.dev/install.sh | sh
+&& curl --insecure -fsSL https://code-server.dev/install.sh | sh
 
 RUN apt install -y libpq-dev postgresql-client \
 && docker-php-ext-install pdo_pgsql pgsql
